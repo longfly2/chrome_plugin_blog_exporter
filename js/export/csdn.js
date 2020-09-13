@@ -19,3 +19,30 @@ function exportArticle() {
 
 }
 document.getElementById("importButton").addEventListener("click", exportArticle);
+
+
+
+
+
+
+function exportPDF() {
+	'use strict';
+	var articleBox = $("div.article_content");
+	articleBox.removeAttr("style");
+	$("#btn-readmore").parent().remove();
+	$("#side").remove();
+	$("#comment_title, #comment_list, #comment_bar, #comment_form, .announce, #ad_cen, #ad_bot").remove();
+	$(".nav_top_2011, #header, #navigator").remove();
+	$(".csdn-side-toolbar,.template-box,.reward-user-box").remove();
+	$(".p4course_target, .comment-box, .recommend-box, #csdn-toolbar, #tool-box,#dmp_ad_58, .more-toolbox, .article-info-box, .btn-readmore, .pub-footer-new").remove();
+	$("aside").remove();
+	$(".tool-box").remove();
+	$("main").css('display','content'); 
+	$("main").css('float','left'); 
+	$("#mainBox").css('width','100%');		
+	$(".main_father.clearfix.d-flex.justify-content-center").css("width","100%");
+	window.print();
+
+
+}
+document.getElementById("btn_csdn_export_pdf").addEventListener("click", exportPDF);
